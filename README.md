@@ -19,4 +19,4 @@ cd ..
 
 cd frontend && \
 yarn install && \
-yarn run dev && \
+yarn run dev
