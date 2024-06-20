@@ -1,0 +1,12 @@
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+  .ck-editor__editable {
+    min-height: 200px;
+}
+
+.ymaps-2-1-79-controls__toolbar_right {
+  margin-right: 50px;
+}
