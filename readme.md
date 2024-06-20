@@ -7,9 +7,9 @@
 ./backend/vendor/bin/sail artisan db:seed
 
 ## тесты
-.backend/vendor/bin/sail test
+./backend/vendor/bin/sail test
 
-# Дополнительно ничего не делал
+### Дополнительно ничего не делал
 
 
 ## фронтенд Запуск
