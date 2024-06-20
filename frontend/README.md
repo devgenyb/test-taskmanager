@@ -2,4 +2,10 @@
 
 ## Тестовый таск менеджер фронт
 
-vite install && vite run dev
+yarn install && \
+yarn run dev
+
+или
+
+npm install && \
+npm run dev

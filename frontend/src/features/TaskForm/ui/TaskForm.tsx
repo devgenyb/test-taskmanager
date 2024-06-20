@@ -12,7 +12,6 @@ import { useForm, useFormState } from "react-hook-form";
 import RHFSwitcher from "@/shared/ui/conponents/RHFSwitcher/RHFSwitcher";
 import RHFSelect from "@/shared/ui/conponents/RHFSelect/RHFSelect";
 import taskApi from "@/app/rtk/endpointsApi/tasksApi";
-import { useAppSelector } from "@/app/store";
 
 type PropsType = {
     data?: TaskType | null;
@@ -34,9 +33,8 @@ const schema = yup.object().shape({
 export const TaskForm: FC<PropsType> = ({ data = null, type = "create" }) => {
     const navigate = useNavigate();
 
-    const { user } = useAppSelector(state => state.user);
 
-    const { control, handleSubmit, getValues } = useForm<FormType>({
+    const { control, handleSubmit } = useForm<FormType>({
         mode: "onBlur",
         resolver: yupResolver(schema) as any,
         defaultValues: {
@@ -54,8 +52,8 @@ export const TaskForm: FC<PropsType> = ({ data = null, type = "create" }) => {
 
     const { data: statuses } = taskApi.getStatuses();
 
-    const getChangedFields = (dirtyFields: any, formData: FormType) => {
-        const changedFields: Partial<FormType> = {};
+    const getChangedFields = (dirtyFields: any, formData: any) => {
+        const changedFields: any = {};
         for (const key in dirtyFields) {
             if (dirtyFields[key]) {
                 changedFields[key] = formData[key];
